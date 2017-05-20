@@ -4,16 +4,15 @@
     "description": "A GUI for a terminus terminal",
     "main": "main.js",
     "scripts": {
-
         "start": "node_modules/electron/dist/electron ."
     },
     "contributors": [
         "Damian Jesionek"
     ],
     "license": "",
-    "repository" : { 
-      "type" : "git",
-      "url" : "https://github.com/vspaceone/terminus-client.git"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vspaceone/terminus-client.git"
     },
     "devDependencies": {
         "electron": "^1.6.6"
