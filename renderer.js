@@ -45,13 +45,15 @@ window.onbeforeunload = function() {
 //################################################################
 // User interface
 //################################################################
+
+// set what to do when a tag is read
 onTagRead = function(uid) {
     console.log("Tag callback")
-    showContentCard()
+    showContentCard(uid)
     animateLogo()
-    setTimeout(function() { hideContentCard() }, 1500)
 }
 
+// Make the logo green and gray again
 function animateLogo() {
     console.log("animateLogo")
     $("#vspaceone_logo > g > path").css({
@@ -67,7 +69,11 @@ function animateLogo() {
     }, 2000)
 }
 
-function showContentCard() {
+function showContentCard(name) {
+    // Fill the card with the users infos
+    $("#content_card_title-heading")[0].innerText = "Hello " + name + "!"
+
+
     console.log("showContentCard")
     $("#content_card").css({
         top: "2%",
@@ -82,6 +88,15 @@ function hideContentCard() {
         transition: "500ms"
     })
 }
+
+//#################################
+// Content Card
+//#################################
+
+// Hide it when the close button is pressed
+$("#foot_button-close").click(function(){
+    hideContentCard()
+})
 
 //################################################################
 // SVG Replacer
