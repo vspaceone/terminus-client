@@ -21,14 +21,14 @@
         <div id="content_card_middle">
         </div>
         <div id="content_card_foot">
-            <button class="foot_button-right" id="foot_button-close">Close</button>
+            <button class="foot_button-right" id="foot_button-close" onclick="renderer.hideContentCard()">Close</button>
         </div>
     </div>
 
 </body>
 
 <script>
-    require('./renderer.js')
+    var renderer = require('./renderer.js')
 </script>
 
 </html>
