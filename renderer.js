@@ -16,8 +16,7 @@ tagreader.setOnTagReadCallback(function(uid) {
     terminus.getUserByUID(uid, function(status, data){
         animateLogo()
         showContentCard(data)        
-    })
-    
+    })    
 })
 
 // Make the logo green and gray again
