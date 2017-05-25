@@ -4,29 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-
 </head>
 
 <body>
+
+    <div id="top_bar">
+    </div>
 
     <div id="background_image">
         <img id="vspaceone_logo" class="svg" src="res/img/logo_vspaceone_grey.svg">
     </div>
 
-    <div id="content_card">
-        <div id="content_card_title">
-            <h1 id="content_card_title-heading"></h1>
-        </div>
-        <div id="content_card_middle">
-        </div>
-        <div id="content_card_foot">
-            <button class="foot_button-right" id="foot_button-close" onclick="renderer.hideContentCard()">Close</button>
-        </div>
-    </div>
-
 </body>
 
+<script>window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min');</script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 <script>
     var renderer = require('./renderer.js')
 </script>

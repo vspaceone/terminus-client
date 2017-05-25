@@ -1,5 +1,8 @@
 var jQuery = require('jquery');
+var bootstrap = require('bootstrap')
+var swal = require('sweetalert2')
 var $ = jQuery;
+
 var tagreader = require('./tagreader.js')
 var terminus = require('./terminus.js')
 
@@ -12,7 +15,7 @@ tagreader.setOnTagReadCallback(function(uid) {
     console.log("Tag callback")
     terminus.getUserByUID(uid, function(status, data){
         animateLogo()
-        showContentCard(data.fullname)        
+        showContentCard(data)        
     })
     
 })
@@ -33,26 +36,14 @@ function animateLogo() {
     }, 2000)
 }
 
-function showContentCard(name) {
-    // Fill the card with the users infos
-    $("#content_card_title-heading")[0].innerText = "Hello " + name + "!"
-
-
-    console.log("showContentCard")
-    $("#content_card").css({
-        top: "2%",
-        transition: "500ms"
-    })
+function showContentCard(data) {
+    swal({
+        title: 'Hi ' + data.fullname + '!',
+        showCloseButton: true,
+        showConfirmButton:false
+    }).catch(swal.noop)
 }
 
-function hideContentCard() {
-    console.log("hideContentCard")
-    $("#content_card").css({
-        top: "100%",
-        transition: "500ms"
-    })
-}
-exports.hideContentCard = hideContentCard;
 
 //################################################################
 // SVG Replacer
